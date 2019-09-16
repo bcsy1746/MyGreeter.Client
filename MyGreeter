@@ -1,0 +1,33 @@
+import datetime
+
+class MyGreeter:
+
+    def greeter(self):
+
+        t1 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '00:00', '%Y-%m-%d%H:%M')
+        t2 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '12:00', '%Y-%m-%d%H:%M')
+        t3 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '18:00', '%Y-%m-%d%H:%M')
+        t4 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '23:59', '%Y-%m-%d%H:%M')
+        curr = datetime.datetime.now()
+
+        if t1 < curr < t2:
+            print("Good Morning")
+        elif curr == t1:
+            print("Good Morning")
+        elif curr == t2:
+            print("Good Afternoon")
+        elif t2 < curr < t3:
+            print("Good Afternoon")
+        elif curr == t3:
+            print("Good Evening")
+        elif t3 < curr < t4:
+            print("Good Evening")
+        elif curr == t4:
+            print("Good Evening")
+        else:
+            pass
+
+if __name__ == '__main__':
+
+    obj = MyGreeter()
+    obj.greeter()
